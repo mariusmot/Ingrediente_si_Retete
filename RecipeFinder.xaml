@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ingrediente_si_Retete.RecipeFinder"
+             Title="Cauta Retete">
+
+    <ScrollView>
+        <StackLayout Margin="20">
+            <Label Text="Selecteaza ingredientele disponibile:" 
+                   FontSize="18"
+                   Margin="0,0,0,10"/>
+
+            <CollectionView x:Name="ingredientsList">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="5">
+                            <CheckBox IsChecked="{Binding IsSelected}"
+                                     VerticalOptions="Center"/>
+                            <Label Text="{Binding Name}"
+                                   Margin="40,0,0,0"
+                                   VerticalOptions="Center"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Button Text="Cauta Retete"
+                    Clicked="OnSearchClicked"
+                    Margin="0,20,0,20"/>
+
+            <Label Text="Retete disponibile:"
+                   FontSize="18"
+                   Margin="0,0,0,10"/>
+
+            <ListView x:Name="recipesList">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Name}"
+                                 Detail="{Binding Instructions}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
