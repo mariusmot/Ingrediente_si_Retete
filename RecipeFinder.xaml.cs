@@ -4,7 +4,7 @@ namespace Ingrediente_si_Retete;
 
 public partial class RecipeFinder : ContentPage
 {
-    // O clasa helper pentru a gestiona selectia ingredientelor
+    // O clasa helper pentru selectia ingredientelor
     public class SelectableIngredient
     {
         public Ingredient Ingredient { get; set; }

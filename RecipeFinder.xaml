@@ -2,15 +2,18 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Ingrediente_si_Retete.RecipeFinder"
-             Title="Cauta Retete">
+             Title="Cauta Retete"
+             BackgroundColor="White">
 
     <ScrollView>
         <StackLayout Margin="20">
-            <Label Text="Selecteaza ingredientele disponibile:" 
+            <Label Text="Selecteaza ingredientele disponibile:"
                    FontSize="18"
+                   TextColor="DodgerBlue"
                    Margin="0,0,0,10"/>
 
-            <CollectionView x:Name="ingredientsList">
+            <CollectionView x:Name="ingredientsList"
+                           BackgroundColor="WhiteSmoke">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid Padding="5">
@@ -18,6 +21,7 @@
                                      VerticalOptions="Center"/>
                             <Label Text="{Binding Name}"
                                    Margin="40,0,0,0"
+                                   TextColor="Black"
                                    VerticalOptions="Center"/>
                         </Grid>
                     </DataTemplate>
@@ -26,17 +30,23 @@
 
             <Button Text="Cauta Retete"
                     Clicked="OnSearchClicked"
+                    BackgroundColor="DodgerBlue"
+                    TextColor="White"
                     Margin="0,20,0,20"/>
 
             <Label Text="Retete disponibile:"
                    FontSize="18"
+                   TextColor="DodgerBlue"
                    Margin="0,0,0,10"/>
 
-            <ListView x:Name="recipesList">
+            <ListView x:Name="recipesList"
+                     BackgroundColor="WhiteSmoke">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <TextCell Text="{Binding Name}"
-                                 Detail="{Binding Instructions}"/>
+                                 Detail="{Binding Instructions}"
+                                 TextColor="Black"
+                                 DetailColor="Gray"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
